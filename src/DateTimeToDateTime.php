@@ -33,7 +33,7 @@ class DateTimeToDateTime extends DateToDateTime
      */
     public function __construct($options = null)
     {
-        $this->setFormat('Y.m.d H:i:s');
+        $this->setFormat('Y-m-d H:i:s');
 
         parent::__construct($options);
     }
@@ -41,9 +41,9 @@ class DateTimeToDateTime extends DateToDateTime
     /**
      * Allow the format key to be format and date_format For consistency with the ZF2 Date Element.
      *
-     * @param  array|Traversable $options
+     * @param array|Traversable $options
      *
-     * @return static
+     * @return $this
      * @throws \Zend\Filter\Exception\InvalidArgumentException
      */
     public function setOptions($options)

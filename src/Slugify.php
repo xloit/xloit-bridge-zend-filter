@@ -54,7 +54,7 @@ class Slugify extends AbstractFilter
     /**
      *
      *
-     * @see   Slugify::$options
+     * @see Slugify::$options
      *
      * @var array
      */
@@ -114,7 +114,7 @@ class Slugify extends AbstractFilter
      *
      * @param string $separator
      *
-     * @return static
+     * @return $this
      */
     public function setSeparator($separator)
     {
@@ -138,7 +138,7 @@ class Slugify extends AbstractFilter
      *
      * @param array $rules
      *
-     * @return static
+     * @return $this
      */
     public function setRules(array $rules)
     {
@@ -162,7 +162,7 @@ class Slugify extends AbstractFilter
      *
      * @param RuleProviderInterface $provider
      *
-     * @return static
+     * @return $this
      */
     public function setProvider(RuleProviderInterface $provider)
     {
@@ -184,10 +184,10 @@ class Slugify extends AbstractFilter
     /**
      * Adds a custom rule to Slugify.
      *
-     * @param string $character   Character
-     * @param string $replacement Replacement character
+     * @param string $character   Character.
+     * @param string $replacement Replacement character.
      *
-     * @return static
+     * @return $this
      */
     public function addRule($character, $replacement)
     {
@@ -201,7 +201,7 @@ class Slugify extends AbstractFilter
      *
      * @param array $rules
      *
-     * @return static
+     * @return $this
      */
     public function addRules(array $rules)
     {
@@ -217,7 +217,7 @@ class Slugify extends AbstractFilter
      *
      * @param string $ruleSet
      *
-     * @return Slugify
+     * @return $this
      */
     public function activateRuleSet($ruleSet)
     {
@@ -227,10 +227,10 @@ class Slugify extends AbstractFilter
     /**
      * Returns the result of filtering $value.
      *
-     * @param  mixed $value
+     * @param mixed $value
      *
-     * @return mixed
-     * @throws Exception\RuntimeException
+     * @return string
+     * @throws \Xloit\Bridge\Zend\Filter\Exception\RuntimeException
      */
     public function filter($value)
     {

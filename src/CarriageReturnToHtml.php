@@ -18,7 +18,6 @@
 namespace Xloit\Bridge\Zend\Filter;
 
 use Zend\Filter\AbstractFilter;
-use Zend\Filter\Exception;
 
 /**
  * A {@link CarriageReturnToHtml} class.
@@ -30,12 +29,16 @@ class CarriageReturnToHtml extends AbstractFilter
     /**
      * Convert paragraphs of text into filtered HTML.
      *
-     * @param  mixed $value
+     * @param mixed $value
      *
-     * @return mixed
+     * @return string
      */
     public function filter($value)
     {
+        if (!is_string($value)) {
+            return $value;
+        }
+
         // Strip unicode bombs, and make sure all newlines are UNIX newlines.
         $value = preg_replace('{^\xEF\xBB\xBF|\x1A}', '', $value);
         $value = preg_replace('{\r\n?}', "\n", $value);

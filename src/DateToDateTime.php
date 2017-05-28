@@ -36,7 +36,7 @@ class DateToDateTime extends DateTimeFormatter
      */
     public function __construct($options = null)
     {
-        $this->setFormat(PhpDateTime::ISO8601);
+        $this->setFormat(PhpDateTime::ATOM);
 
         parent::__construct($options);
     }
@@ -44,11 +44,11 @@ class DateToDateTime extends DateTimeFormatter
     /**
      * Allow the format key to be format and date_format For consistency with the ZF2 Date Element.
      *
-     * @param  array|Traversable $options
+     * @param array|Traversable $options
      *
      * @throws \Zend\Filter\Exception\InvalidArgumentException
      *
-     * @return static
+     * @return $this
      */
     public function setOptions($options)
     {
@@ -79,9 +79,8 @@ class DateToDateTime extends DateTimeFormatter
      *
      * @param mixed $value
      *
+     * @return DateTime|mixed
      * @throws \Zend\Filter\Exception\InvalidArgumentException
-     *
-     * @return mixed
      */
     public function filter($value)
     {

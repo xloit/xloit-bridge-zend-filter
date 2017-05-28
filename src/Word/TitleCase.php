@@ -60,7 +60,9 @@ class TitleCase extends AbstractUnicode
     ];
 
     /**
-     * {@inheritDoc}
+     * Filter options.
+     *
+     * @var array
      */
     protected $options = [
         'encoding' => null
@@ -88,9 +90,9 @@ class TitleCase extends AbstractUnicode
     /**
      * Returns the result of filtering $value.
      *
-     * @param  mixed $value
+     * @param mixed $value
      *
-     * @return mixed
+     * @return string
      * @throws \Zend\Filter\Exception\RuntimeException
      */
     public function filter($value)

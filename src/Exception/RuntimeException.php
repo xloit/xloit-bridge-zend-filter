@@ -17,11 +17,13 @@
 
 namespace Xloit\Bridge\Zend\Filter\Exception;
 
+use Xloit\Exception\RuntimeException as AbstractRuntimeException;
+
 /**
  * A {@link RuntimeException} class.
  *
  * @package Xloit\Bridge\Zend\Filter\Exception
  */
-class RuntimeException extends \Xloit\Exception\RuntimeException
+class RuntimeException extends AbstractRuntimeException
 {
 }

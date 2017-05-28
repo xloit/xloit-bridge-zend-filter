@@ -18,7 +18,6 @@
 namespace Xloit\Bridge\Zend\Filter;
 
 use Zend\Filter\AbstractFilter;
-use Zend\Filter\Exception;
 
 /**
  * A {@link StripCarriageReturn} class.
@@ -30,13 +29,16 @@ class StripCarriageReturn extends AbstractFilter
     /**
      * Returns the result of filtering $value.
      *
-     * @param  mixed $value
+     * @param mixed $value
      *
-     * @throws Exception\RuntimeException If filtering $value is impossible
-     * @return mixed
+     * @return string
      */
     public function filter($value)
     {
+        if (!is_string($value)) {
+            return $value;
+        }
+
         // Strip unicode bombs, and make sure all newlines are UNIX newlines.
         $value = preg_replace('{^\xEF\xBB\xBF|\x1A}', '', $value);
 

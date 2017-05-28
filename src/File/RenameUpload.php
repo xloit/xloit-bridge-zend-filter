@@ -31,7 +31,7 @@ class RenameUpload extends ZendRenameUpload
     /**
      * If this variable is set to TRUE, our library will be able to automatically create non-existed directories.
      *
-     * @var boolean
+     * @var bool
      */
     protected $allowCreateFolders = false;
 
@@ -39,14 +39,14 @@ class RenameUpload extends ZendRenameUpload
      * It helps to avoid problems after migrating from case-insensitive file system to case-insensitive
      * (e.g. NTFS->ext or ext->NTFS).
      *
-     * @var boolean
+     * @var bool
      */
     protected $caseInsensitiveFilename = false;
 
     /**
      * Transliterate target filename.
      *
-     * @var boolean
+     * @var bool
      */
     protected $transliterateFilename = false;
 
@@ -74,9 +74,9 @@ class RenameUpload extends ZendRenameUpload
     /**
      * Set enable files dispersion.
      *
-     * @param boolean $enableFileDispersion
+     * @param bool $enableFileDispersion
      *
-     * @return static
+     * @return $this
      */
     public function setEnableFileDispersion($enableFileDispersion)
     {
@@ -96,7 +96,7 @@ class RenameUpload extends ZendRenameUpload
      * @param  array $uploadData $_FILES array
      *
      * @return string
-     * @throws Exception\NoSuchDirectoryException
+     * @throws \Xloit\Bridge\Zend\Filter\Exception\NoSuchDirectoryException
      */
     protected function getFinalTarget($uploadData)
     {
@@ -122,7 +122,8 @@ class RenameUpload extends ZendRenameUpload
     /**
      * Create destination folder on the fly.
      *
-     * @throws Exception\NoSuchDirectoryException
+     * @return void
+     * @throws \Xloit\Bridge\Zend\Filter\Exception\NoSuchDirectoryException
      */
     protected function createFolders()
     {
@@ -161,7 +162,7 @@ class RenameUpload extends ZendRenameUpload
      *
      * @param string $targetDirectory
      *
-     * @return static
+     * @return $this
      */
     public function setTargetDirectory($targetDirectory)
     {
@@ -183,9 +184,9 @@ class RenameUpload extends ZendRenameUpload
     /**
      * Allow create folders.
      *
-     * @param boolean $allowCreateFolders
+     * @param bool $allowCreateFolders
      *
-     * @return static
+     * @return $this
      */
     public function setAllowCreateFolders($allowCreateFolders)
     {
@@ -228,9 +229,9 @@ class RenameUpload extends ZendRenameUpload
     /**
      * Set case insensitive filenames.
      *
-     * @param boolean $caseInsensitiveFilename
+     * @param bool $caseInsensitiveFilename
      *
-     * @return static
+     * @return $this
      */
     public function setCaseInsensitiveFilename($caseInsensitiveFilename)
     {
@@ -273,9 +274,9 @@ class RenameUpload extends ZendRenameUpload
     /**
      *
      *
-     * @param boolean $transliterateFilename
+     * @param bool $transliterateFilename
      *
-     * @return static
+     * @return $this
      */
     public function setTransliterateFilename($transliterateFilename)
     {
@@ -292,7 +293,7 @@ class RenameUpload extends ZendRenameUpload
      *
      * @param string $finalTarget
      *
-     * @return mixed
+     * @return string
      * @throws \Xloit\Bridge\Zend\Filter\Exception\NoSuchDirectoryException
      */
     protected function fileDispersion($finalTarget)

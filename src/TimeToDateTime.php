@@ -41,9 +41,9 @@ class TimeToDateTime extends DateToDateTime
     /**
      * Allow the format key to be format and date_format For consistency with the ZF2 Date Element.
      *
-     * @param  array $options
+     * @param array $options
      *
-     * @return static
+     * @return $this
      * @throws \Zend\Filter\Exception\InvalidArgumentException
      */
     public function setOptions($options)
