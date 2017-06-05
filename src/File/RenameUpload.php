@@ -93,7 +93,7 @@ class RenameUpload extends ZendRenameUpload
     /**
      *
      *
-     * @param  array $uploadData $_FILES array
+     * @param  array $uploadData $_FILES array.
      *
      * @return string
      * @throws \Xloit\Bridge\Zend\Filter\Exception\NoSuchDirectoryException

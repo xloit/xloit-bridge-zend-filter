@@ -39,7 +39,7 @@ class DateTimeToDateTime extends DateToDateTime
     }
 
     /**
-     * Allow the format key to be format and date_format For consistency with the ZF2 Date Element.
+     * Allow the format key to be format and date_format For consistency with the Zend Date Element.
      *
      * @param array|Traversable $options
      *
